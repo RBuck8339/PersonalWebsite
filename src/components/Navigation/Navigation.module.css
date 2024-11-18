@@ -1,0 +1,71 @@
+.Navbar {
+    display: flex;
+    margin: 0;
+    color: purple;
+    background-color: purple;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1000;
+}
+
+.button:hover {
+    background-color: gold;
+    /*For visual distinction right now*/
+    cursor: pointer;
+}
+
+.button {
+    background-color: blue;
+    /*For visual distinction right now*/
+    padding: 0px 10px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 115px;
+    color: white;
+    border: black;
+}
+
+.buttonSocial {
+    background-color: blue;
+    /*For visual distinction right now*/
+    padding: 0px 10px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 30px;
+    color: white;
+    border: black;
+    border-width: 3px;
+}
+
+.buttonSocial:hover {
+    background-color: gold;
+    /*For visual distinction right now*/
+    cursor: pointer;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 5px 0px;
+    margin-right: 137px;
+    min-width: 115px;
+    top: 100%;
+    background-color: red;
+    /*For visual distinction right now*/
+}
+
+.dropdownItem {
+    padding: 10px 15px;
+    background-color: yellow;
+    /*For visual distinction right now*/
+    color: black;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.dropdownItem:hover {
+    background-color: brown;
+    /*For visual distinction right now*/
+}
