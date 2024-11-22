@@ -5,7 +5,6 @@ import {Home} from './pages/Home/Home';
 import {Portfolio} from './pages/Portfolio/Portfolio';
 import {Skills} from './pages/Skills/Skills';
 import {Resume} from './pages/Resume/Resume';
-import {Publications} from './pages/Publications/Publications';
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
         <Route path='/Portfolio' element={<Portfolio />} />
         <Route path='/Skills' element={<Skills />} />
         <Route path='/Resume' element={<Resume />} />
-        <Route path='/Publications' element={<Publications />} />
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
       </Routes>
     </BrowserRouter>

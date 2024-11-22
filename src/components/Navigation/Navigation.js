@@ -59,7 +59,6 @@ export function Navbar() {
                         Portfolio: "/Portfolio",
                         Skills: "/Skills",
                         Resume: "/Resume", 
-                        Publications: "/Publications"
                     }}
                 />
             )}
