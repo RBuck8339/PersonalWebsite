@@ -1,0 +1,50 @@
+.Skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.Languages {
+    display: flex;
+    flex-direction: column;
+}
+
+.Libraries {
+    display: flex;
+    flex-direction: column;
+}
+
+.Tools {
+    display: flex;
+    flex-direction: column;
+}
+
+.Dev {
+    display: flex;
+    flex-direction: column;
+}
+
+.languageCards {
+    display: flex;
+    flex-direction: row;
+}
+
+.libraryCards {
+    display: flex;
+    flex-direction: row;
+}
+
+.toolCards {
+    display: flex;
+    flex-direction: row;
+}
+
+.devCards {
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}

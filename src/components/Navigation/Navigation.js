@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import styles from './Navigation.module.css';
-import emailLogo from '../../assets/images/email.png';
-import githubLogo from '../../assets/images/github.png';
-import linkedinLogo from '../../assets/images/linkedin.png';
+import emailLogo from '../../assets/images/socials/email.png';
+import githubLogo from '../../assets/images/socials/github.png';
+import linkedinLogo from '../../assets/images/socials/linkedin.png';
+import resumeLogo from '../../assets/images/socials/resume.png';
 
 
 // Navigation Bar seen at all times in the program
@@ -24,6 +25,12 @@ export function Navbar() {
             style: styles.button,
             onclick: () => setDropdownOpen(!dropdownOpen),
             display: 'pages'
+        },
+        // Resume button
+        {
+            id: 'resume_button',
+            style: styles.buttonSocial,
+            display: <a href="/RonanBuck_Resume.pdf" target="_blank" rel="noopener noreferrer"><img src={resumeLogo} alt="Resume"/></a>
         },
         // GitHub button
         {
@@ -58,7 +65,6 @@ export function Navbar() {
                     options={{
                         Portfolio: "/Portfolio",
                         Skills: "/Skills",
-                        Resume: "/Resume", 
                     }}
                 />
             )}

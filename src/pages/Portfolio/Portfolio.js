@@ -178,13 +178,19 @@ function SearchBar(){
 
 export function Portfolio(){
     return (
-        <div className={styles.portfolio}>
-            <h1><b>Education:</b></h1>
-            <Educations />
-            <h1><b>Experiences:</b></h1>
-            <Experiences />
-            <h1><b>Publications:</b></h1>
-            <Publications />
+        <div className={styles.Portfolio}>
+            <div className={styles.Education}>
+                <h1 className={styles.title}><b>Education:</b></h1>
+                <Educations />    
+            </div>
+            <div className={styles.Experiences}>
+                <h1 className={styles.title}><b>Experiences:</b></h1>
+                <Experiences />
+            </div>
+            <div className={styles.Publications}>
+                <h1 className={styles.title}><b>Publications:</b></h1>
+                <Publications />
+            </div>
         </div>
     );
 }

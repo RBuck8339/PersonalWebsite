@@ -1,0 +1,17 @@
+.Portfolio {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 50px;
+}
+
+.Education,
+.Experiences,
+.Publications {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-decoration: underline;
+    color: rgb(181, 179, 179);
+}
