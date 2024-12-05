@@ -63,4 +63,15 @@
     border-style: solid;
     border-radius: 15px;
     margin: 0px 5px;
+    box-shadow: rgba(0, 0, 0, 0.5);
+}
+
+.skillText {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    align-items: center;
+}
+
+.skill:hover .skillText {
+    opacity: 1;
 }

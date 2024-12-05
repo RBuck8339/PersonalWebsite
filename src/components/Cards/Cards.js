@@ -62,9 +62,9 @@ export function Skill({details}){
     return (
         <div id="Skill" className={styles.skill}>
             {details.Display}
-            <p>{details.Name}</p>
+            <p className={styles.skillText}>{details.Name}</p>
         </div>
-    )
+    );
 }
 
 export function Publication({details}){

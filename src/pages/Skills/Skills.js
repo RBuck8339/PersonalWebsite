@@ -28,6 +28,7 @@ import git_img from '../../assets/images/skills/tools/git.png';
 import github_img from '../../assets/images/skills/tools/github.png';
 import linux_img from '../../assets/images/skills/tools/linux.png';
 import vscode_img from '../../assets/images/skills/tools/vscode.png';
+import jupyter_img from '../../assets/images/skills/tools/jupyter.png';
 
 // Dev img imports
 import flask_img from '../../assets/images/skills/dev/flask.png';
@@ -62,39 +63,39 @@ function Languages(){
     let languages = [
         {
             Name: 'Python',
-            Display: <img src={python_img} alt="Email"/>
+            Display: <img className={styles.logo} src={python_img} alt="Python"/>
         },
         {
             Name: 'C',
-            Display: <img src={c_img} alt="Email"/>
+            Display: <img className={styles.logo} src={c_img} alt="C"/>
         },
         {
             Name: 'C++',
-            Display: <img src={cpp_img} alt="Email"/>
+            Display: <img className={styles.logo} src={cpp_img} alt="C++"/>
         },
         {
             Name: 'Java',
-            Display: <img src={java_img} alt="Email"/>
+            Display: <img className={styles.logo} src={java_img} alt="Java"/>
         },
         {
             Name: 'HTML',
-            Display: <img src={html_img} alt="Email"/>
+            Display: <img className={styles.logo} src={html_img} alt="HTML"/>
         },
         {
             Name: 'CSS',
-            Display: <img src={css_img} alt="Email"/>
+            Display: <img className={styles.logo} src={css_img} alt="CSS"/>
         },
         {
             Name: 'JavaScript',
-            Display: <img src={javascript_img} alt="Email"/>
+            Display: <img className={styles.logo} src={javascript_img} alt="JavaScript"/>
         },
         {
             Name: 'Flutter',
-            Display: <img src={flutter_img} alt="Email"/>
+            Display: <img className={styles.logo} src={flutter_img} alt="Flutter"/>
         },
         {
             Name: 'Arduino',
-            Display: <img src={arduino_img} alt="Email"/>
+            Display: <img className={styles.logo} src={arduino_img} alt="Arduino"/>
         },
     ]
     return(
@@ -109,31 +110,31 @@ function Libraries(){
     let libraries = [
         {
             Name: 'Pandas',
-            Display: <img src={pandas_img} alt="Email"/>
+            Display: <img className={styles.logo} src={pandas_img} alt="Pandas"/>
         },
         {
             Name: 'Numpy',
-            Display: <img src={numpy_img} alt="Email"/>
+            Display: <img className={styles.logo} src={numpy_img} alt="Numpy"/>
         },
         {
             Name: 'PyTorch',
-            Display: <img src={pytorch_img} alt="Email"/>
+            Display: <img className={styles.logo} src={pytorch_img} alt="PyTorch"/>
         },
         {
             Name: 'Tensorflow',
-            Display: <img src={tensorflow_img} alt="Email"/>
+            Display: <img className={styles.logo} src={tensorflow_img} alt="Tensorflow"/>
         },
         {
             Name: 'MatPlotLib',
-            Display: <img src={matplotlib_img} alt="Email"/>
+            Display: <img className={styles.logo} src={matplotlib_img} alt="MatPlotLib"/>
         },
         {
             Name: 'OpenAI API',
-            Display: <img src={openai_img} alt="Email"/>
+            Display: <img className={styles.logo} src={openai_img} alt="OpenAI API"/>
         },
         {
             Name: 'Seaborn',
-            Display: <img src={seaborn_img} alt="Email"/>
+            Display: <img className={styles.logo} src={seaborn_img} alt="Seaborn"/>
         },
     ]
     return(
@@ -148,23 +149,27 @@ function Tools(){
     let tools = [
         {
             Name: 'Git',
-            Display: <img src={git_img} alt="Email"/>
+            Display: <img className={styles.logo} src={git_img} alt="Git"/>
         },
         {
             Name: 'GitHub',
-            Display: <img src={github_img} alt="Email"/>
+            Display: <img className={styles.logo} src={github_img} alt="GitHub"/>
+        },
+        {
+            Name: 'Jupyter',
+            Display: <img className={styles.logo} src={jupyter_img} alt="Jupyter"/>
         },
         {
             Name: 'VSCode',
-            Display: <img src={vscode_img} alt="Email"/>
+            Display: <img className={styles.logo} src={vscode_img} alt="VSCode"/>
         },
         {
             Name: 'Docker',
-            Display: <img src={docker_img} alt="Email"/>
+            Display: <img className={styles.logo} src={docker_img} alt="Docker"/>
         },
         {
             Name: 'Linux',
-            Display: <img src={linux_img} alt="Email"/>
+            Display: <img className={styles.logo} src={linux_img} alt="Linux"/>
         },
     ]
     return(
@@ -179,15 +184,15 @@ function Dev(){
     let dev = [
         {
             Name: 'Flask',
-            Display: <img src={flask_img} alt="Email"/>
+            Display: <img className={styles.logo} src={flask_img} alt="Flask"/>
         },
         {
             Name: 'React',
-            Display: <img src={react_img} alt="Email"/>
+            Display: <img className={styles.logo} src={react_img} alt="React"/>
         },
         {
             Name: 'Node.js',
-            Display: <img src={nodejs_img} alt="Email"/>
+            Display: <img className={styles.logo} src={nodejs_img} alt="NodeJS"/>
         },
     ]
     return(

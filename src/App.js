@@ -1,4 +1,4 @@
-import {BrowserRouter, RouterProvider, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './App.css';
 import {Navbar} from './components/Navigation/Navigation';
 import {Home} from './pages/Home/Home';
@@ -15,7 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/Portfolio' element={<Portfolio />} />
         <Route path='/Skills' element={<Skills />} />
-        <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+        <Route path="*" element={<h1 className='Error'>404 - Page Not Found</h1>} />
       </Routes>
     </BrowserRouter>
   );
