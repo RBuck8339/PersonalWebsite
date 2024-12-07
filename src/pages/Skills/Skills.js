@@ -39,21 +39,25 @@ import react_img from '../../assets/images/skills/dev/react.png';
 export function Skills(){
     return (
         <div className={styles.Skills}>
-            <div className={styles.Languages}>
-                <h1>Languages</h1>
-                <Languages />
+            <div className={styles.row1}>
+                <div className={styles.skillGroup}>
+                    <h1 className={styles.header}>Languages</h1>
+                    <Languages />
+                </div>
+                <div className={styles.skillGroup}>
+                    <h1 className={styles.header}>Libraries</h1>
+                    <Libraries />
+                </div>
             </div>
-            <div className={styles.Libraries}>
-                <h1>Libraries</h1>
-                <Libraries />
-            </div>
-            <div className={styles.Tools}>
-                <h1>Tools</h1>
-                <Tools />
-            </div>
-            <div className={styles.Dev}>
-                <h1>Dev</h1>
-                <Dev />
+            <div className={styles.row2}>
+                <div className={styles.skillGroup}>
+                    <h1 className={styles.header}>Tools</h1>
+                    <Tools />
+                </div>
+                <div className={styles.skillGroup}>
+                    <h1 className={styles.header}>Dev</h1>
+                    <Dev />
+                </div>
             </div>
         </div>
     );
@@ -98,10 +102,20 @@ function Languages(){
             Display: <img className={styles.logo} src={arduino_img} alt="Arduino"/>
         },
     ]
+
+    let grouped_languages = groupItems(languages, 5);
+
+    console.log(grouped_languages);
+
     return(
         <div className={styles.languageCards}>
-            {languages.map((details) =>
-            <Skill details={details} />)}
+            {grouped_languages.map((group, rowIndex) => (
+            <div key={rowIndex} className={styles.languageRow}>
+                {group.map((details, index) => (
+                    <Skill key={index} details={details} />
+                ))}
+            </div>
+        ))}
         </div>
     )
 }
@@ -201,4 +215,13 @@ function Dev(){
             <Skill details={details} />)}
         </div>
     )
+}
+
+function groupItems(data, itemsPerRow){
+    let items = [];
+    for(let i = 0; i < data.length; i += itemsPerRow){
+        items.push(data.slice(i, i + itemsPerRow));
+    }
+
+    return items;
 }
