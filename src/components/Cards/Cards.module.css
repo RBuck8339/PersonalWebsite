@@ -35,11 +35,13 @@
 .Publication {
     display: flex;
     flex-direction: column;
-    margin: 20px 50px;
+    margin: 25px;
     border-style: solid;
     border-radius: 25px;
     border-color: black;
     box-shadow: rgba(255, 255, 255, 0.5);
+    width: 450px;
+    height: 450px;
 }
 
 .title {
@@ -74,4 +76,15 @@
 
 .skill:hover .skillText {
     opacity: 1;
+}
+
+.Header {
+    display: flex;
+    flex-direction: row;
+}
+
+.headerText {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
 }

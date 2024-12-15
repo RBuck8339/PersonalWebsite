@@ -1,44 +1,21 @@
 .Skills {
     display: flex;
+    flex-direction: row;
+    margin: 3% 10%;
+}
+
+.column1,
+.column2 {
+    display: flex;
     flex-direction: column;
-}
-
-.row1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.row2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    margin-right: 15%;
 }
 
 .skillGroup {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    flex-direction: column;
-}
-
-.Languages {
-    display: flex;
-    flex-direction: column;
-}
-
-.Libraries {
-    display: flex;
-    flex-direction: column;
-}
-
-.Tools {
-    display: flex;
-    flex-direction: column;
-}
-
-.Dev {
-    display: flex;
-    flex-direction: column;
+    margin: 3% 8%;
 }
 
 .header {
@@ -46,28 +23,26 @@
     text-decoration: underline;
 }
 
-.languageCards {
-    display: flex;
-    flex-direction: row;
-}
-
-.libraryCards {
-    display: flex;
-    flex-direction: row;
-}
-
-.toolCards {
-    display: flex;
-    flex-direction: row;
-}
-
+.languageCards,
+.libraryCards,
+.toolCards,
 .devCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0% 10%;
+}
+
+.languageRow,
+.libraryRow,
+.toolRow,
+.devRow {
     display: flex;
     flex-direction: row;
 }
 
 .logo {
-    margin: 10% 5%;
+    margin: 10px 5px;
     min-width: 75px;
     min-height: 75px;
     max-width: 75px;

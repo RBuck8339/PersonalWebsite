@@ -39,20 +39,21 @@ import react_img from '../../assets/images/skills/dev/react.png';
 export function Skills(){
     return (
         <div className={styles.Skills}>
-            <div className={styles.row1}>
+            {/*Maybe change these to be column groups for formatting */}
+            <div className={styles.column1}>
                 <div className={styles.skillGroup}>
                     <h1 className={styles.header}>Languages</h1>
                     <Languages />
                 </div>
                 <div className={styles.skillGroup}>
-                    <h1 className={styles.header}>Libraries</h1>
-                    <Libraries />
-                </div>
-            </div>
-            <div className={styles.row2}>
-                <div className={styles.skillGroup}>
                     <h1 className={styles.header}>Tools</h1>
                     <Tools />
+                </div>
+            </div>
+            <div className={styles.column2}>
+                <div className={styles.skillGroup}>
+                    <h1 className={styles.header}>Libraries</h1>
+                    <Libraries />
                 </div>
                 <div className={styles.skillGroup}>
                     <h1 className={styles.header}>Dev</h1>
@@ -105,17 +106,15 @@ function Languages(){
 
     let grouped_languages = groupItems(languages, 5);
 
-    console.log(grouped_languages);
-
     return(
         <div className={styles.languageCards}>
             {grouped_languages.map((group, rowIndex) => (
-            <div key={rowIndex} className={styles.languageRow}>
-                {group.map((details, index) => (
-                    <Skill key={index} details={details} />
-                ))}
-            </div>
-        ))}
+                <div key={rowIndex} className={styles.languageRow}>
+                    {group.map((details, index) => (
+                        <Skill key={index} details={details} />
+                    ))}
+                </div>
+            ))}
         </div>
     )
 }
@@ -151,10 +150,18 @@ function Libraries(){
             Display: <img className={styles.logo} src={seaborn_img} alt="Seaborn"/>
         },
     ]
+
+    let grouped_libraries = groupItems(libraries, 4);
+
     return(
         <div className={styles.libraryCards}>
-            {libraries.map((details) =>
-            <Skill details={details} />)}
+            {grouped_libraries.map((group, rowIndex) => (
+                <div key={rowIndex} className={styles.libraryRow}>
+                    {group.map((details, index) => (
+                        <Skill key={index} details={details} />
+                    ))}
+                </div>
+            ))}
         </div>
     )
 }
@@ -186,10 +193,18 @@ function Tools(){
             Display: <img className={styles.logo} src={linux_img} alt="Linux"/>
         },
     ]
+
+    let grouped_tools = groupItems(tools, 4);
+
     return(
         <div className={styles.toolCards}>
-            {tools.map((details) =>
-            <Skill details={details} />)}
+            {grouped_tools.map((group, rowIndex) => (
+                <div key={rowIndex} className={styles.toolRow}>
+                    {group.map((details, index) => (
+                        <Skill key={index} details={details} />
+                    ))}
+                </div>
+            ))}
         </div>
     )
 }
@@ -209,14 +224,23 @@ function Dev(){
             Display: <img className={styles.logo} src={nodejs_img} alt="NodeJS"/>
         },
     ]
+
+    let grouped_dev = groupItems(dev, 4);
+
     return(
         <div className={styles.devCards}>
-            {dev.map((details) =>
-            <Skill details={details} />)}
+            {grouped_dev.map((group, rowIndex) => (
+                <div key={rowIndex} className={styles.devRow}>
+                    {group.map((details, index) => (
+                        <Skill key={index} details={details} />
+                    ))}
+                </div>
+            ))}
         </div>
     )
 }
 
+// Build rows by slicing the data into smaller rows
 function groupItems(data, itemsPerRow){
     let items = [];
     for(let i = 0; i < data.length; i += itemsPerRow){

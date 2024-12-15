@@ -4,9 +4,25 @@
     margin: 0px 50px;
 }
 
+.experienceCards,
+.educationCards,
+.positionCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experienceRow,
+.educationRow,
+.positionRow {
+    display: flex;
+    flex-direction: row;
+}
+
 .Education,
 .Experiences,
-.Publications {
+.Publications,
+.Positions {
     display: flex;
     flex-direction: column;
 }
@@ -14,4 +30,11 @@
 .title {
     text-decoration: underline;
     color: rgb(181, 179, 179);
+}
+
+.logo {
+    max-width: 75px;
+    max-height: 75px;
+    top: 0;
+    right: 0;
 }
