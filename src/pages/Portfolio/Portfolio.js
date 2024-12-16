@@ -2,8 +2,8 @@ import React from 'react';
 import {useSearchParams} from 'react-router-dom';
 import styles from './Portfolio.module.css';
 import {Experience, Education, Publication, Position} from '../../components/Cards/Cards';
-import fgcu_img from '../../assets/images/portfolio/fgcu_logo.png';
-import ucf_img from '../../assets/images/portfolio/ucf_logo.png';
+import fgcu_img from '../../assets/images/portfolio/schools/fgcu_logo.png';
+import ucf_img from '../../assets/images/portfolio/schools/ucf_logo.png';
 
 
 function Positions(){
@@ -62,7 +62,7 @@ function Educations(){
             Img: <img className={styles.logo} src={ucf_img} alt="UCF_Logo"/>,
             Major: 'Computer Science',
             Minor: 'Intelligent Robotics Systems',
-            GPA: '3.98',
+            GPA: '3.95 ',
             Dates: 'August 2023 - May 2026',
             Organizations: ['Burnett Honors College', 'Knight\'s Experimental Rocketry', 'Knight Hack\'s', 'IEEE'],
             Coursework: ['Computer Science I', 'Computer Science II', 'Algorithms for Machine Learning', 'Principles of Object Oriented Software Development', 'Discrete Structures', 'AI for Game Development'],
@@ -103,7 +103,7 @@ function Organizations(){
 
     ]
 
-    let grouoped_organizations = groupItems(organization, 3);
+    let grouped_organizations = groupItems(organization, 3);
 
 }
 
@@ -204,19 +204,29 @@ function Experiences(){
 }
 
 
-function Publications({details}){
-    let publication = [
+/*Might make this its own page, as part of a dropdown menu that shows project demos */
+function Publications(){
+    let publications = [
         {
             Title: 'Coming Soon',
             Date: 'Soon',
             Link: 'Here'
         }
     ]
-    return <div className="Publication">{
-        publication.map((details) =>
-            <Publication key={details.id} details={details}/>
-        )}
-    </div>
+
+    let grouped_publications = groupItems(publications, 1);
+
+    return (
+        <div className={styles.publicationCards}>
+            {grouped_publications.map((group, rowIndex) => (
+                <div key={rowIndex} className={styles.publicationRow}>
+                    {group.map((details, index) => (
+                        <Publication key={index} id={details.id} details={details} />
+                    ))}
+                </div>
+            ))}
+        </div>
+    );
 }
 
 
