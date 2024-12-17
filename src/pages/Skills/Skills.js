@@ -29,6 +29,7 @@ import github_img from '../../assets/images/skills/tools/github.png';
 import linux_img from '../../assets/images/skills/tools/linux.png';
 import vscode_img from '../../assets/images/skills/tools/vscode.png';
 import jupyter_img from '../../assets/images/skills/tools/jupyter.png';
+import wandb_img from '../../assets/images/skills/tools/wandb.png';
 
 // Dev img imports
 import flask_img from '../../assets/images/skills/dev/flask.png';
@@ -39,7 +40,6 @@ import react_img from '../../assets/images/skills/dev/react.png';
 export function Skills(){
     return (
         <div className={styles.Skills}>
-            {/*Maybe change these to be column groups for formatting */}
             <div className={styles.column1}>
                 <div className={styles.skillGroup}>
                     <h1 className={styles.header}>Languages</h1>
@@ -192,6 +192,10 @@ function Tools(){
             Name: 'Linux',
             Display: <img className={styles.logo} src={linux_img} alt="Linux"/>
         },
+        {
+            Name: 'Weights & Biases',
+            Display: <img className={styles.logo} src={wandb_img} alt="WandB"/>
+        }
     ]
 
     let grouped_tools = groupItems(tools, 4);

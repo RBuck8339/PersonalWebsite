@@ -31,6 +31,12 @@ export function Navbar() {
             href: '/Portfolio', // Go to home page
             display: 'Portfolio'
         },
+        {
+            id: 'skills_button',
+            style: styles.button,
+            href: '/Skills',
+            display: 'Skills'
+        },
         // Pages dropdown button
         // { // Tmp unused
         //     id: 'pages_button',
