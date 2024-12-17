@@ -1,25 +1,24 @@
-.Portfolio {
+.Experience {
     display: flex;
     flex-direction: column;
     margin: 0px 50px;
 }
 
-.experienceCards,
-.publicationCards {
+.educationCards,
+.positionCards {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.experienceRow,
-.publicationRow {
+.educationRow,
+.positionRow {
     display: flex;
     flex-direction: row;
 }
 
-.Experiences,
-.Publications,
-.Publications {
+.Educations,
+.Positions {
     display: flex;
     flex-direction: column;
 }

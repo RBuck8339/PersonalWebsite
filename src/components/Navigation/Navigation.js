@@ -19,13 +19,25 @@ export function Navbar() {
             href: '/', // Go to home page
             display: 'home'
         },
-        // Pages dropdown button
         {
-            id: 'pages_button',
+            id: 'experience_button',
             style: styles.button,
-            onclick: () => setDropdownOpen(!dropdownOpen),
-            display: 'pages'
+            href: '/Experience',
+            display: 'Experience'
         },
+        {
+            id: 'portfolio_button',
+            style: styles.button,
+            href: '/Portfolio', // Go to home page
+            display: 'Portfolio'
+        },
+        // Pages dropdown button
+        // { // Tmp unused
+        //     id: 'pages_button',
+        //     style: styles.button,
+        //     onclick: () => setDropdownOpen(!dropdownOpen),
+        //     display: 'pages'
+        // },
         // Resume button
         {
             id: 'resume_button',
@@ -60,14 +72,15 @@ export function Navbar() {
             {buttons.map((info) => 
                 <Button key={info.id} details={info} />
             )}
-            {dropdownOpen && (
+            {/*Make the dropdown div with its button*/}
+            {/*dropdownOpen && (
                 <DropDown 
                     options={{
                         Portfolio: "/Portfolio",
                         Skills: "/Skills",
                     }}
                 />
-            )}
+            )*/}
         </div>
     );
 }
