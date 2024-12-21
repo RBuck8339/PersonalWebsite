@@ -17,25 +17,25 @@ export function Navbar() {
             id: 'home_button',
             style: styles.button,
             href: '/', // Go to home page
-            display: 'home'
+            display:  <h1 className={styles.buttonText}>Home</h1>
         },
         {
             id: 'experience_button',
             style: styles.button,
             href: '/Experience',
-            display: 'Experience'
+            display:  <h1 className={styles.buttonText}>Experience</h1>
         },
         {
             id: 'portfolio_button',
             style: styles.button,
             href: '/Portfolio', // Go to home page
-            display: 'Portfolio'
+            display:  <h1 className={styles.buttonText}>Portfolio</h1>
         },
         {
             id: 'skills_button',
             style: styles.button,
             href: '/Skills',
-            display: 'Skills'
+            display: <h1 className={styles.buttonText}>Skills</h1>
         },
         // Pages dropdown button
         // { // Tmp unused
@@ -48,28 +48,28 @@ export function Navbar() {
         {
             id: 'resume_button',
             style: styles.buttonSocial,
-            display: <a href="/RonanBuck_Resume.pdf" target="_blank" rel="noopener noreferrer"><img src={resumeLogo} alt="Resume"/></a>
+            display: <a href="/RonanBuck_Resume.pdf" target="_blank" rel="noopener noreferrer"><img className={styles.logo} src={resumeLogo} alt="Resume"/></a>
         },
         // GitHub button
         {
             id: 'github_button',
             style: styles.buttonSocial,
             onclick: () => { window.open("https://github.com/RBuck8339", "_blank"); }, // Go to github
-            display: <img src={githubLogo} alt="GitHub"/>
+            display: <img className={styles.logo} src={githubLogo} alt="GitHub"/>
         },
         // LinkedIn Button
         {
             id: 'linkedin_button',
             style: styles.buttonSocial,
             onclick: () => { window.open("https://www.linkedin.com/in/ronan-buck-79002b239/", "_blank"); }, // Go to linkedin
-            display: <img src={linkedinLogo} alt="LinkedIn"/>
+            display: <img className={styles.logo} src={linkedinLogo} alt="LinkedIn"/>
         },
         // Email button
         {
             id: 'email_button',
             style: styles.buttonSocial,
             href: "mailto:ronanwb2015@outlook.com?subject=Job%20Application&body=Hello%20Ronan,",  // Set up an email
-            display: <img src={emailLogo} alt="Email"/>
+            display: <img className={styles.logo} src={emailLogo} alt="Email"/>
         }
     ]
 
