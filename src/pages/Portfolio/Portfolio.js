@@ -133,6 +133,10 @@ function SearchBar(){
 export function Portfolio(){
     return (
         <div className={styles.Portfolio}>
+            <div className={styles.introText}>
+                <h1>My Portfolio</h1>
+                <p>It is important to me that each project that I take on has something new for me to learn. So I have joined a variety of clubs and challenged myself in personal projects. Below is a list of my projects and publications to date.</p>
+            </div>
             <div className={styles.Experiences}>
                 <h1 className={styles.title}><b>Experiences:</b></h1>
                 <Experiences />

@@ -1,7 +1,6 @@
 import React from 'react';
-import {useSearchParams} from 'react-router-dom';
 import styles from './Experience.module.css';
-import {Experience, Education, Publication, Position} from '../../components/Cards/Cards';
+import {Education, Position} from '../../components/Cards/Cards';
 import fgcu_img from '../../assets/images/portfolio/schools/fgcu_logo.png';
 import ucf_img from '../../assets/images/portfolio/schools/ucf_logo.png';
 
@@ -39,16 +38,11 @@ function Positions(){
         }
     ]
         
-    let grouped_positions = groupItems(positions, 2);
 
     return (
         <div className={styles.positionCards}>
-            {grouped_positions.map((group, rowIndex) => (
-                <div key={rowIndex} className={styles.positionRow}>
-                    {group.map((details, index) => (
-                        <Position key={index} id = {details.id} details={details} />
-                    ))}
-                </div>
+            {positions.map((details) => (
+                <Position id = {details.id} details={details} />
             ))}
         </div>
     );
@@ -82,16 +76,10 @@ function Educations(){
         }
     ]
 
-    let grouped_educations = groupItems(education, 2);
-
     return (
         <div className={styles.educationCards}>
-            {grouped_educations.map((group, rowIndex) => (
-                <div key={rowIndex} className={styles.educationRow}>
-                    {group.map((details, index) => (
-                        <Education key={index} id = {details.id} details={details} />
-                    ))}
-                </div>
+            {education.map((details) => (
+                <Education id = {details.id} details={details} />
             ))}
         </div>
     );
@@ -103,29 +91,23 @@ function Organizations(){
 
     ]
 
-    let grouped_organizations = groupItems(organization, 3);
-
 }
 
 export function Experiences(){
     return (
         <div className={styles.Experiences}>
-            <div className={styles.Educations}>
-                <Educations />
+            <div className={styles.introText}>
+                <h1>My Experience</h1>
+                <p>As a student, I have made sure to keep pursuing new opportunities that allow me to grow as an academic, developer, and person. Below are my experiences to date that reflect my growth.</p>
             </div>
             <div className={styles.Positions}>
+                <h1 className={styles.header}>My Positions</h1>
                 <Positions />
+            </div>
+            <div className={styles.Educations}>
+                <h1 className={styles.header}>My Education</h1>
+                <Educations />
             </div>
         </div>
     );
-}
-
-// Build rows by slicing the data into smaller rows
-function groupItems(data, itemsPerRow){
-    let items = [];
-    for(let i = 0; i < data.length; i += itemsPerRow){
-        items.push(data.slice(i, i + itemsPerRow));
-    }
-
-    return items;
 }

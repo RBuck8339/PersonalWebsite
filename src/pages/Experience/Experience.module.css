@@ -11,12 +11,6 @@
     align-items: center;
 }
 
-.educationRow,
-.positionRow {
-    display: flex;
-    flex-direction: row;
-}
-
 .Educations,
 .Positions {
     display: flex;

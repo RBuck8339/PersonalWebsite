@@ -1,6 +1,4 @@
 import React from 'react';
-import {Portfolio} from '../Portfolio/Portfolio';
-import {Skills} from '../Skills/Skills';
 import styles from './Home.module.css';
 
 
@@ -9,13 +7,6 @@ export function Home(){
         <div className={styles.homePage}>
             <div className={styles.about}>
                 <Profile />
-            </div>
-            <div className={styles.portfolio}>
-                <Portfolio />
-            </div>
-            <div className={styles.skills}>
-                <h1 className={styles.header}>My Skills</h1>
-                <Skills />
             </div>
         </div>
         
