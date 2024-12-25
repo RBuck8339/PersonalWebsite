@@ -5,13 +5,14 @@ import fgcu_img from '../../assets/images/portfolio/schools/fgcu_logo.png';
 import ucf_img from '../../assets/images/portfolio/schools/ucf_logo.png';
 
 
-function Positions(){
+function GetPositions(){
     let positions = [
         // Research
         {
             Name: 'Undergraduate Researcher',
             Location: 'Future Data Lab',
             Date: 'March 2024 - Present',
+            StartDate: '03-01-2024', // Init to first of month for sorting
             Description:
                 <div className={styles.positionDescription}>
                     <ul>
@@ -20,13 +21,15 @@ function Positions(){
                         <li>Develop graph embedding methods for continuous-time predictions</li>
                     </ul>
                 </div>,
-            Skills: ''
+            Skills: '',
+            Type: 'Position'
         },
         // Teaching Assistant
         {
             Name: 'Teaching Assistant',
             Location: 'University of Central Florida',
-            Date: 'August 2024 - Present',
+            Date: 'August 2024 - December 2024',
+            StartDate: '08-01-2024', // Init to first of month for sorting
             Description: 
                 <div className={styles.positionDescription}>
                     <ul>
@@ -34,21 +37,15 @@ function Positions(){
                         <li>Taught students basic python programming, data science, and machine learning techniques to assist them in their careers</li>
                     </ul>
                 </div>,
-            Skills: ''
+            Skills: '',
+            Type: 'Position'
         }
     ]
         
-
-    return (
-        <div className={styles.positionCards}>
-            {positions.map((details) => (
-                <Position id = {details.id} details={details} />
-            ))}
-        </div>
-    );
+    return positions;
 }
 
-function Educations(){
+function GetEducations(){
     let education = [
         // UCF
         {
@@ -58,9 +55,11 @@ function Educations(){
             Minor: 'Intelligent Robotics Systems',
             GPA: '3.95 ',
             Dates: 'August 2023 - May 2026',
+            StartDate: '08-01-2023',   // Init to first of month for sorting
             Organizations: ['Burnett Honors College', 'Knight\'s Experimental Rocketry', 'Knight Hack\'s', 'IEEE'],
             Coursework: ['Computer Science I', 'Computer Science II', 'Algorithms for Machine Learning', 'Principles of Object Oriented Software Development', 'Discrete Structures', 'AI for Game Development'],
-            id: 'UCF'
+            id: 'UCF',
+            Type: 'Education'
         },
         // FGCU
         {
@@ -70,27 +69,47 @@ function Educations(){
             Minor: 'Mathematics',
             GPA: '3.97',
             Dates: 'August 2021 - May 2023',
+            StartDate: '08-01-2021',  // Init to first of month for sorting
             Organizations: ['Accelerated Collegiate Academy'],
             Coursework: ['Discrete Mathematics', 'Programming I (C++)', 'Programming II (C++)'],
-            id: 'FGCU'
+            id: 'FGCU',
+            Type: 'Education'
         }
     ]
 
-    return (
-        <div className={styles.educationCards}>
-            {education.map((details) => (
-                <Education id = {details.id} details={details} />
-            ))}
-        </div>
-    );
+    return education;
 }
 
 
+// Debating adding organizations to the timeline
 function Organizations(){
     let organization = [
 
     ]
 
+}
+
+function MappedExperiences(){
+    // Get necessary objects
+    let educations = GetEducations();
+    let positions = GetPositions();
+    let experiences = educations.concat(positions);
+
+    // Sort
+    experiences.sort((a, b) => new Date(b.StartDate) - new Date(a.StartDate));
+    console.log(experiences)
+
+    return (
+        <div className={styles.Timeline}>
+            {experiences.map((details) => (
+                details.Type === 'Position' ? (
+                    <Position key={details.id} id={details.id} details={details} />
+                ) : details.Type === 'Education' ? (
+                    <Education key={details.id} id={details.id} details={details} />
+                ) : null
+            ))}
+        </div>
+    );
 }
 
 export function Experiences(){
@@ -100,14 +119,7 @@ export function Experiences(){
                 <h1>My Experience</h1>
                 <p>As a student, I have made sure to keep pursuing new opportunities that allow me to grow as an academic, developer, and person. Below are my experiences to date that reflect my growth.</p>
             </div>
-            <div className={styles.Positions}>
-                <h1 className={styles.header}>My Positions</h1>
-                <Positions />
-            </div>
-            <div className={styles.Educations}>
-                <h1 className={styles.header}>My Education</h1>
-                <Educations />
-            </div>
+            <MappedExperiences />
         </div>
     );
 }

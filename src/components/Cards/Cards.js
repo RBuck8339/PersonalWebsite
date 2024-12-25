@@ -31,7 +31,7 @@ export function Experience({details}){
 
 export function Position({details}){
     return (
-        <div className={styles.Experience}>
+        <div className={styles.Position}>
             <div className={styles.headerText}>
                 <h2 className={styles.title}>{details.Name}</h2>
                 <i className={styles.info}>{details.Location} {details.Date && <i className={styles.info}>: {details.Date}</i>}</i>

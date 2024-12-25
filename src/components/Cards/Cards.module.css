@@ -1,5 +1,4 @@
 .Experience,
-.Education,
 .Publication {
     display: flex;
     flex-direction: column;
@@ -10,6 +9,20 @@
     box-shadow: rgba(255, 255, 255, 0.5);
     width: 450px;
     height: 450px;
+}
+
+.Education,
+.Position {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: black;
+    box-shadow: rgba(255, 255, 255, 0.5);
+    width: 1200px;
+    height: 450px;
+    position: relative;
 }
 
 .title {

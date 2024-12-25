@@ -23,8 +23,9 @@
 }
 
 .logo {
+    position: absolute;
     max-width: 75px;
     max-height: 75px;
-    top: 0;
-    right: 0;
+    top: 2px;
+    right: 2px;
 }
