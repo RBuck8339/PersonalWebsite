@@ -1,25 +1,58 @@
-.Experience {
+.Timeline {
     display: flex;
     flex-direction: column;
-    margin: 0px 50px;
-}
-
-.educationCards,
-.positionCards {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    margin: 20px;
+    padding: 0;
     align-items: center;
+    /* Center-align the timeline */
 }
 
-.Educations,
-.Positions {
+.TimelineItem {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 15%;
+    right: 15%;
+    width: 100%;
+    /* Ensure items span the full width */
 }
 
-.title {
+.TimelineDot {
+    width: 20px;
+    height: 20px;
+    background-color: #FFD700;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.TimelineLine {
+    position: absolute;
+    top: 50%;
+    /* Start from the middle of the dot */
+    left: 10px;
+    width: 2px;
+    height: calc(100%);
+    /* Extend beyond the dot size to connect */
+    background-color: black;
+    z-index: 1;
+    transform: translateX(-50%);
+    /* Horizontal centering */
+}
+
+
+/* Remove line for the last item */
+
+.TimelineItem:last-child .TimelineLine {
+    display: none;
+}
+
+.introText {}
+
+.header {
     text-decoration: underline;
-    color: rgb(181, 179, 179);
 }
 
 .logo {
@@ -28,4 +61,15 @@
     max-height: 75px;
     top: 2px;
     right: 2px;
+}
+
+
+/*In case I decide to use an image instead of a dot*/
+
+.TimelineImage {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin: 0 auto;
+    z-index: 1;
 }

@@ -32,13 +32,16 @@ export function Experience({details}){
 export function Position({details}){
     return (
         <div className={styles.Position}>
-            <div className={styles.headerText}>
-                <h2 className={styles.title}>{details.Name}</h2>
-                <i className={styles.info}>{details.Location} {details.Date && <i className={styles.info}>: {details.Date}</i>}</i>
+            <div className={styles.Info}>
+                <div className={styles.headerText}>
+                    <h2 className={styles.title}>{details.Name}</h2>
+                    <i className={styles.info}>{details.Location} {details.Date && <i className={styles.info}>: {details.Date}</i>}</i>
+                </div>
+                <hr className={styles.hr} />
+                {details.Description && <p>Description: {details.Description}</p>}
+                <p><b>Skills: </b>{Array.isArray(details.Tags) ? details.Tags.join(', ') : details.Tags}</p>
             </div>
-            <hr className={styles.hr} />
-            {details.Description && <p>Description: {details.Description}</p>}
-            <p><b>Skills: </b>{Array.isArray(details.Tags) ? details.Tags.join(', ') : details.Tags}</p>
+            
         </div>
     );
 }
@@ -46,17 +49,20 @@ export function Position({details}){
 export function Education({details}){
     return (
         <div className={styles.Education}>
-            <div className={styles.Header}>
-                <div className={styles.headerText}>
-                    <h2 className={styles.title}>{details.School}</h2>
-                    <p>B.S. {details.Major}; Minor: {details.Minor}</p>
-                    <i>GPA: {details.GPA}</i> 
+            <div className={styles.Info}>
+                <div className={styles.Header}>
+                    <div className={styles.headerText}>
+                        <h2 className={styles.title}>{details.School}</h2>
+                        <p>B.S. {details.Major}; Minor: {details.Minor}</p>
+                        <i>GPA: {details.GPA}</i> 
+                    </div>
+                    {details.Img}
                 </div>
-                {details.Img}
+                <i>{details.Dates}</i>
+                <p>Organizations: {Array.isArray(details.Organizations) ? details.Organizations.join(', '): details.Organizations}</p>
+                <p>Coursework: {Array.isArray(details.Coursework) ? details.Coursework.join(', '): details.Coursework}</p>
             </div>
-            <i>{details.Dates}</i>
-            <p>Organizations: {Array.isArray(details.Organizations) ? details.Organizations.join(', '): details.Organizations}</p>
-            <p>Coursework: {Array.isArray(details.Coursework) ? details.Coursework.join(', '): details.Coursework}</p>
+            
         </div>
     )
 }

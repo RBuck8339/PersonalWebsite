@@ -45,6 +45,7 @@ function GetPositions(){
     return positions;
 }
 
+
 function GetEducations(){
     let education = [
         // UCF
@@ -89,24 +90,31 @@ function Organizations(){
 
 }
 
+
 function MappedExperiences(){
     // Get necessary objects
     let educations = GetEducations();
     let positions = GetPositions();
     let experiences = educations.concat(positions);
 
-    // Sort
-    experiences.sort((a, b) => new Date(b.StartDate) - new Date(a.StartDate));
-    console.log(experiences)
+    experiences.sort((a, b) => new Date(b.StartDate) - new Date(a.StartDate));  // Sort
 
     return (
         <div className={styles.Timeline}>
-            {experiences.map((details) => (
-                details.Type === 'Position' ? (
-                    <Position key={details.id} id={details.id} details={details} />
-                ) : details.Type === 'Education' ? (
-                    <Education key={details.id} id={details.id} details={details} />
-                ) : null
+            {experiences.map((details, idx) => (
+                <div key={details.id} className={styles.TimelineItem}>
+                    <div className={styles.TimelineDot}></div>
+                    {idx !== experiences.length - 1 && (
+                        <div className={styles.TimelineLine}></div>
+                    )}
+                    <div className={styles.TimelineContent}>
+                        {details.Type === 'Position' ? (
+                            <Position id={details.id} details={details} />
+                        ) : details.Type === 'Education' ? (
+                            <Education id={details.id} details={details} />
+                        ) : null}
+                    </div>
+                </div>
             ))}
         </div>
     );
@@ -116,7 +124,7 @@ export function Experiences(){
     return (
         <div className={styles.Experiences}>
             <div className={styles.introText}>
-                <h1>My Experience</h1>
+                <h1 className={styles.header}>My Experience</h1>
                 <p>As a student, I have made sure to keep pursuing new opportunities that allow me to grow as an academic, developer, and person. Below are my experiences to date that reflect my growth.</p>
             </div>
             <MappedExperiences />
