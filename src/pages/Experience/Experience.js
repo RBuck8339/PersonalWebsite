@@ -11,33 +11,27 @@ function GetPositions(){
         {
             Name: 'Undergraduate Researcher',
             Location: 'Future Data Lab',
-            Date: 'March 2024 - Present',
+            Dates: 'March 2024 - Present',
             StartDate: '03-01-2024', // Init to first of month for sorting
-            Description:
-                <div className={styles.positionDescription}>
-                    <ul>
-                        <li>Currently writing a survey paper on the development, applications, and future of temporal graph neural networks</li>
-                        <li>Employ network-based methods on real-world Ethereum and Blockchain datasets using Python libraries such as Networkx and PyTorch</li>
-                        <li>Develop graph embedding methods for continuous-time predictions</li>
-                    </ul>
-                </div>,
-            Skills: '',
+            Responsibilities: [
+                'Currently writing a survey paper on the development, applications, and future of temporal graph neural networks', 
+                'Employ network-based methods on real-world Ethereum and Blockchain datasets using Python libraries such as Networkx and PyTorch', 
+                'Develop graph embedding methods for continuous-time predictions'
+                ],
+            Skills: ['Python', 'Graph Neural Networks', 'Recurrent Neural Networks', 'Topological Data Analysis', 'Graphs'],
             Type: 'Position'
         },
         // Teaching Assistant
         {
             Name: 'Teaching Assistant',
             Location: 'University of Central Florida',
-            Date: 'August 2024 - December 2024',
+            Dates: 'August 2024 - December 2024',
             StartDate: '08-01-2024', // Init to first of month for sorting
-            Description: 
-                <div className={styles.positionDescription}>
-                    <ul>
-                        <li>Assisted 60 Masters in Fintech students in the course Computational Methods in Fintech</li>
-                        <li>Taught students basic python programming, data science, and machine learning techniques to assist them in their careers</li>
-                    </ul>
-                </div>,
-            Skills: '',
+            Responsibilities: [
+                    'Assisted 60 Masters in Fintech students in the course Computational Methods in Fintech',
+                    'Taught students basic python programming, data science, and machine learning techniques to assist them in their careers'
+                ],
+            Skills: ['Python', 'Teaching', 'Machine Learning'],
             Type: 'Position'
         }
     ]
@@ -56,6 +50,7 @@ function GetEducations(){
             Minor: 'Intelligent Robotics Systems',
             GPA: '3.95 ',
             Dates: 'August 2023 - May 2026',
+            Location: 'Orlando, Florida',
             StartDate: '08-01-2023',   // Init to first of month for sorting
             Organizations: ['Burnett Honors College', 'Knight\'s Experimental Rocketry', 'Knight Hack\'s', 'IEEE'],
             Coursework: ['Computer Science I', 'Computer Science II', 'Algorithms for Machine Learning', 'Principles of Object Oriented Software Development', 'Discrete Structures', 'AI for Game Development'],
@@ -70,6 +65,7 @@ function GetEducations(){
             Minor: 'Mathematics',
             GPA: '3.97',
             Dates: 'August 2021 - May 2023',
+            Location: 'Fort Myers, Florida',
             StartDate: '08-01-2021',  // Init to first of month for sorting
             Organizations: ['Accelerated Collegiate Academy'],
             Coursework: ['Discrete Mathematics', 'Programming I (C++)', 'Programming II (C++)'],
@@ -79,15 +75,6 @@ function GetEducations(){
     ]
 
     return education;
-}
-
-
-// Debating adding organizations to the timeline
-function Organizations(){
-    let organization = [
-
-    ]
-
 }
 
 

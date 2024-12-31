@@ -33,13 +33,24 @@ export function Position({details}){
     return (
         <div className={styles.Position}>
             <div className={styles.Info}>
-                <div className={styles.headerText}>
-                    <h2 className={styles.title}>{details.Name}</h2>
-                    <i className={styles.info}>{details.Location} {details.Date && <i className={styles.info}>: {details.Date}</i>}</i>
+                <div className={styles.Header}>
+                    <div className={styles.headerText}>
+                        <h2 className={styles.title}>{details.Name}</h2>
+                        <p className={styles.meta}>
+                            <i>{details.Dates}</i> | {details.Location}
+                        </p>
+                    </div>
                 </div>
-                <hr className={styles.hr} />
-                {details.Description && <p>Description: {details.Description}</p>}
-                <p><b>Skills: </b>{Array.isArray(details.Tags) ? details.Tags.join(', ') : details.Tags}</p>
+                <div className={styles.Body}>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        {details.Responsibilities.map((item, idx) =>
+                            <li key={idx}>{item}</li>
+                        )}
+                    </ul>
+                    <p><strong>Skills: </strong>{Array.isArray(details.Skills) ? details.Skills.join(', ') : details.Skills}</p>
+                </div>
+                
             </div>
             
         </div>
@@ -53,16 +64,21 @@ export function Education({details}){
                 <div className={styles.Header}>
                     <div className={styles.headerText}>
                         <h2 className={styles.title}>{details.School}</h2>
-                        <p>B.S. {details.Major}; Minor: {details.Minor}</p>
-                        <i>GPA: {details.GPA}</i> 
+                        <p className={styles.meta}>
+                            <i>{details.Dates}</i> | {details.Location}
+                        </p>
+                        <p className={styles.degree}>
+                            <strong>B.S. {details.Major}</strong>; Minor: {details.Minor}
+                        </p>
                     </div>
                     {details.Img}
                 </div>
-                <i>{details.Dates}</i>
-                <p>Organizations: {Array.isArray(details.Organizations) ? details.Organizations.join(', '): details.Organizations}</p>
-                <p>Coursework: {Array.isArray(details.Coursework) ? details.Coursework.join(', '): details.Coursework}</p>
+                <div className={styles.Body}>
+                    <i className={styles.gpa}><strong>GPA: </strong>{details.GPA}/4.0</i>
+                    <p className={styles.Organizations}><strong>Organizations: </strong>{Array.isArray(details.Organizations) ? details.Organizations.join(', '): details.Organizations}</p>
+                    <p className={styles.Coursework}><strong>Relevant Coursework: </strong>{Array.isArray(details.Coursework) ? details.Coursework.join(', '): details.Coursework}</p>
+                </div>
             </div>
-            
         </div>
     )
 }

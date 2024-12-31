@@ -18,7 +18,6 @@
 }
 
 .Experiences,
-.Publications,
 .Publications {
     display: flex;
     flex-direction: column;
