@@ -3,7 +3,20 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #2B2B2B;
+    background-color: var(--background-color);
     height: 100%;
     box-sizing: border-box;
+}
+
+:root {
+    --background-color: #2B2B2B;
+    --box-color: #2B2B2B;
+    --primary-color: #3498DB;
+    --secondary-color: #2ECC71;
+    --accent-color: #E74C3C;
+    --text-color: #FFFFFF;
+    --border-color: #000000;
+    --button-color: #FFD700;
+    --navbar-color: #7C4D1E;
+    --hover-color: #C0C0C0;
 }
