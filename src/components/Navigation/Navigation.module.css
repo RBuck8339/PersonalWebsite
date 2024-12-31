@@ -1,8 +1,8 @@
 .Navbar {
     display: flex;
     margin: 0;
-    background-color: #7C4D1E;
-    justify-content: flex-end;
+    background-color: var(--navbar-color);
+    justify-content: center;
     position: relative;
     z-index: 1000;
     border-bottom: 3px solid silver;
@@ -12,12 +12,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFD700;
-    border-left: 2px solid black;
+    background-color: var(--button-color);
+    border: none;
+    border-left: 2px solid var(--border-color);
     padding: 0px 8px;
     text-decoration: none;
     max-width: 105px;
-    color: white;
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+.button:last-child {
+    border-right: 2px solid var(--border-color);
 }
 
 .buttonText {
@@ -26,24 +32,19 @@
 }
 
 .buttonSocial {
-    display: flex;
-    background-color: #FFD700;
-    border-left: 2px solid black;
-    border-top: none;
-    border-right: none;
-    border-bottom: none;
+    background-color: var(--background-color);
+    border: none;
     padding: 0;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-decoration: none;
-    width: 60px;
+    width: 50px;
     height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .buttonSocial:hover,
 .button:hover {
-    background-color: silver;
+    background-color: var(--hover-color);
     cursor: pointer;
 }
 
@@ -52,4 +53,12 @@
     height: 40px;
     object-fit: contain;
     margin: auto;
+}
+
+.SocialButtons {
+    border: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0px
 }

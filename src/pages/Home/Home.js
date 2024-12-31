@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Home.module.css';
+import SocialButtons from '../../components/Navigation/Navigation';
 
 
 export function Home(){
@@ -8,6 +9,7 @@ export function Home(){
             <div className={styles.about}>
                 <Profile />
             </div>
+            <SocialButtons />
         </div>
         
     )

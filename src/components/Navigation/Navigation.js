@@ -44,6 +44,29 @@ export function Navbar() {
         //     onclick: () => setDropdownOpen(!dropdownOpen),
         //     display: 'pages'
         // },
+    ]
+
+    return ( 
+        <div className={styles.Navbar}>
+            {buttons.map((info) => 
+                <Button key={info.id} details={info} />
+            )}
+            {/*Make the dropdown div with its button*/}
+            {/*dropdownOpen && (
+                <DropDown 
+                    options={{
+                        Portfolio: "/Portfolio",
+                        Skills: "/Skills",
+                    }}
+                />
+            )*/}
+        </div>
+    );
+}
+
+
+export default function SocialButtons(){
+    let buttons = [
         // Resume button
         {
             id: 'resume_button',
@@ -68,28 +91,22 @@ export function Navbar() {
         {
             id: 'email_button',
             style: styles.buttonSocial,
-            href: "mailto:ronanwb2015@outlook.com?subject=Job%20Application&body=Hello%20Ronan,",  // Set up an email
+            onclick: () => {
+                window.location.href = "mailto:ronanwb2015@outlook.com?subject=Job%20Application&body=Hello%20Ronan,";
+            },
             display: <img className={styles.logo} src={emailLogo} alt="Email"/>
         }
-    ]
+    ];
 
-    return ( 
-        <div className={styles.Navbar}>
+    return (
+        <div className={styles.SocialButtons}>
             {buttons.map((info) => 
                 <Button key={info.id} details={info} />
             )}
-            {/*Make the dropdown div with its button*/}
-            {/*dropdownOpen && (
-                <DropDown 
-                    options={{
-                        Portfolio: "/Portfolio",
-                        Skills: "/Skills",
-                    }}
-                />
-            )*/}
         </div>
-    );
+    )
 }
+
 
 // Button component
 export function Button({ details }) {
