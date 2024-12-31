@@ -42,13 +42,16 @@ export function Position({details}){
                     </div>
                 </div>
                 <div className={styles.Body}>
-                    <p><strong>Responsibilities:</strong></p>
-                    <ul>
-                        {details.Responsibilities.map((item, idx) =>
-                            <li key={idx}>{item}</li>
-                        )}
-                    </ul>
-                    <p><strong>Skills: </strong>{Array.isArray(details.Skills) ? details.Skills.join(', ') : details.Skills}</p>
+                    <div className={styles.Responsibilities}>
+                        <p><strong>Responsibilities:</strong></p>
+                        <ul>
+                            {details.Responsibilities.map((item, idx) =>
+                                <li key={idx}>{item}</li>
+                            )}
+                        </ul>
+                    </div>
+                    
+                    <p className={styles.Skills}><strong>Skills: </strong>{Array.isArray(details.Skills) ? details.Skills.join(', ') : details.Skills}</p>
                 </div>
                 
             </div>
@@ -86,8 +89,12 @@ export function Education({details}){
 export function Skill({details}){
     return (
         <div id="Skill" className={styles.skill}>
-            {details.Display}
-            <p className={styles.skillText}>{details.Name}</p>
+            <div className={styles.skillContainer}>
+                {details.Display}
+                <div className={styles.overlay}>
+                    <p className={styles.skillText}>{details.Name}</p>
+                </div>
+            </div>
         </div>
     );
 }

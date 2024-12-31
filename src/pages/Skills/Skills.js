@@ -151,7 +151,7 @@ function Libraries(){
         },
     ]
 
-    let grouped_libraries = groupItems(libraries, 4);
+    let grouped_libraries = groupItems(libraries, 5);
 
     return(
         <div className={styles.libraryCards}>

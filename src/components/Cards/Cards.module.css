@@ -59,27 +59,54 @@
 .skill {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100px;
-    height: 125px;
+    height: 110px;
     background-color: var(--box-color);
     /*Tmp color for visual distinction*/
     border-color: var(--border-color);
     border-width: 2px;
     border-style: solid;
     border-radius: 15px;
-    margin: 0px 5px;
+    overflow: hidden;
+    margin: 10px 5px;
+    margin-top: 0px;
     box-shadow: rgba(0, 0, 0, 0.5);
 }
 
-.skillText {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    align-items: center;
+.skillContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
-.skill:hover .skillText {
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: var(--text-color);
+}
+
+.skill:hover .overlay {
     opacity: 1;
+}
+
+.skillText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: auto;
 }
 
 .Header {
