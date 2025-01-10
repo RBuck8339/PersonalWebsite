@@ -14,20 +14,21 @@ export function Project(details){
 }
 
 
-
 export function Experience({details}){
     return (
         <div className={styles.Experience}>
-            <h2 className={styles.title}>{details.Name}</h2>
-            <i className={styles.info}>{details.Location} {details.Date && <i className={styles.info}>: {details.Date}</i>}</i>
-            <hr className={styles.hr} />
-            {details.Description && <p>{details.Description}</p>}
-            {details.ProjectLink && <p>{details.ProjectLink}</p>}
-            {details.Img && <img href={details.Img} alt='imgtext'></img>}
-            <p><b>Skills: </b>{Array.isArray(details.Tags) ? details.Tags.join(', ') : details.Tags}</p>
+            <div className={styles.ExperienceBody}>
+                <h2 className={styles.title}>{details.Name}</h2>
+                <i className={styles.info}>{details.Location} {details.Date && <i className={styles.info}>: {details.Date}</i>}</i>
+                {details.Description && <p>{details.Description}</p>}
+                {details.ProjectLink && <p>{details.ProjectLink}</p>}
+                {details.Img && <img href={details.Img} alt='imgtext'></img>}
+                <p><b>Skills: </b>{Array.isArray(details.Tags) ? details.Tags.join(', ') : details.Tags}</p>
+            </div>
         </div>
     );
 }
+
 
 export function Position({details}){
     return (
@@ -60,6 +61,7 @@ export function Position({details}){
     );
 }
 
+
 export function Education({details}){
     return (
         <div className={styles.Education}>
@@ -86,6 +88,7 @@ export function Education({details}){
     )
 }
 
+
 export function Skill({details}){
     return (
         <div id="Skill" className={styles.skill}>
@@ -98,6 +101,7 @@ export function Skill({details}){
         </div>
     );
 }
+
 
 export function Publication({details}){
     return (

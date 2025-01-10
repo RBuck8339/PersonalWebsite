@@ -17,6 +17,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/Portfolio' element={<Portfolio />} />
         <Route path='/Experience' element={<Experiences />} />
+        {/* Might make a publications page that states "Coming Soon" */}
         <Route path='/Skills' element={<Skills />} />
         <Route path="*" element={<h1 className='Error'>404 - Page Not Found</h1>} />
       </Routes>

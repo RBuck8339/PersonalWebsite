@@ -4,7 +4,7 @@
 }
 
 .about {
-    margin: 200px 50px;
+    margin: 200px 30px;
 }
 
 .portfolio {
@@ -28,6 +28,7 @@
     border-color: var(--border-color);
     box-shadow: rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    margin-bottom: 80px;
 }
 
 .profileName {
@@ -39,9 +40,32 @@
     z-index: 4;
 }
 
+.Name {
+    color: var(--accent-color);
+    text-decoration: none !important;
+    font-size: calc(14px + 2vmin);
+    justify-content: center;
+}
+
 .profileContent {
     display: flex;
-    margin: 10px;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.body {
+    display: flex;
+    margin: none;
+    text-indent: 2em;
+    /* Works like a tab character*/
+}
+
+.aboutMe {
+    display: flex;
+    margin: none;
+    margin-top: 15px;
+    text-indent: 2em;
+    /* Works like a tab character*/
 }
 
 .profileText {

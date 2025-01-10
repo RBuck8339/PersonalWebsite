@@ -12,6 +12,11 @@
     height: 450px;
 }
 
+.ExperienceBody,
+.PublicationBody {
+    margin: 2%;
+}
+
 .Education,
 .Position {
     display: flex;

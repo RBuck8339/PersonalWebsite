@@ -20,7 +20,7 @@ function Experiences(){
         {
             Name: 'Rocket Control Panel',
             Location: 'Knight\'s Experimental Rocketry',
-            Date: 'Auguest 2023 - April 2024',
+            Date: 'August 2023 - April 2024',
             Description: 'This control panel is a fully customizable control panel that works for two distinct rocket teams. The control panel features 10 switches, 5 buttons, and a key to prepare to fire the rocket. It supports 3 monitors, displaying live data readings from the rockets onboard FPGA board with data received through the TCP protocol. It operates on an STM32 microcontroller and a Python script that connects to the Arduino program uploaded on the microcontroller.',
             Img: 'imghere',
             Tags: ['Hardware', 'Arduino', 'Python', 'Student Organization', 'Networking'],

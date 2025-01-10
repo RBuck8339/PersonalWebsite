@@ -40,24 +40,32 @@ import react_img from '../../assets/images/skills/dev/react.png';
 export function Skills(){
     return (
         <div className={styles.Skills}>
-            <div className={styles.column1}>
-                <div className={styles.skillGroup}>
-                    <h1 className={styles.header}>Languages</h1>
-                    <Languages />
-                </div>
-                <div className={styles.skillGroup}>
-                    <h1 className={styles.header}>Tools</h1>
-                    <Tools />
-                </div>
+            <div className={styles.introText}>
+                <h1 className={styles.title}>
+                    My Skills
+                </h1>
+                <p>In every opportunity that I have, I make sure to learn a new skill and develop my old skills. Below are my current skills that I feel comfortable developing with. </p>
             </div>
-            <div className={styles.column2}>
-                <div className={styles.skillGroup}>
-                    <h1 className={styles.header}>Libraries</h1>
-                    <Libraries />
+            <div className={styles.skillGroups}>
+                <div className={styles.column1}>
+                    <div className={styles.skillGroup}>
+                        <h1 className={styles.header}>Languages</h1>
+                        <Languages />
+                    </div>
+                    <div className={styles.skillGroup}>
+                        <h1 className={styles.header}>Tools</h1>
+                        <Tools />
+                    </div>
                 </div>
-                <div className={styles.skillGroup}>
-                    <h1 className={styles.header}>Dev</h1>
-                    <Dev />
+                <div className={styles.column2}>
+                    <div className={styles.skillGroup}>
+                        <h1 className={styles.header}>Libraries</h1>
+                        <Libraries />
+                    </div>
+                    <div className={styles.skillGroup}>
+                        <h1 className={styles.header}>Dev</h1>
+                        <Dev />
+                    </div>
                 </div>
             </div>
         </div>
