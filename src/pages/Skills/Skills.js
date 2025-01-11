@@ -47,25 +47,21 @@ export function Skills(){
                 <p>In every opportunity that I have, I make sure to learn a new skill and develop my old skills. Below are my current skills that I feel comfortable developing with. </p>
             </div>
             <div className={styles.skillGroups}>
-                <div className={styles.column1}>
-                    <div className={styles.skillGroup}>
-                        <h1 className={styles.header}>Languages</h1>
-                        <Languages />
-                    </div>
-                    <div className={styles.skillGroup}>
-                        <h1 className={styles.header}>Tools</h1>
-                        <Tools />
-                    </div>
+                <div className={styles.skillGroup}>
+                    <h1 className={styles.header}>Languages</h1>
+                    <Languages />
                 </div>
-                <div className={styles.column2}>
-                    <div className={styles.skillGroup}>
-                        <h1 className={styles.header}>Libraries</h1>
-                        <Libraries />
-                    </div>
-                    <div className={styles.skillGroup}>
-                        <h1 className={styles.header}>Dev</h1>
-                        <Dev />
-                    </div>
+                <div className={styles.skillGroup}>
+                    <h1 className={styles.header}>Tools</h1>
+                    <Tools />
+                </div>
+                <div className={styles.skillGroup}>
+                    <h1 className={styles.header}>Libraries</h1>
+                    <Libraries />
+                </div>
+                <div className={styles.skillGroup}>
+                    <h1 className={styles.header}>Dev</h1>
+                    <Dev />
                 </div>
             </div>
         </div>
@@ -112,16 +108,10 @@ function Languages(){
         },
     ]
 
-    let grouped_languages = groupItems(languages, 5);
-
     return(
         <div className={styles.languageCards}>
-            {grouped_languages.map((group, rowIndex) => (
-                <div key={rowIndex} className={styles.languageRow}>
-                    {group.map((details, index) => (
-                        <Skill key={index} details={details} />
-                    ))}
-                </div>
+            {languages.map((details, index) => (
+                <Skill key={index} details={details} />
             ))}
         </div>
     )
@@ -159,16 +149,10 @@ function Libraries(){
         },
     ]
 
-    let grouped_libraries = groupItems(libraries, 5);
-
     return(
         <div className={styles.libraryCards}>
-            {grouped_libraries.map((group, rowIndex) => (
-                <div key={rowIndex} className={styles.libraryRow}>
-                    {group.map((details, index) => (
-                        <Skill key={index} details={details} />
-                    ))}
-                </div>
+            {libraries.map((details, index) => (
+                <Skill key={index} details={details} />
             ))}
         </div>
     )
@@ -206,16 +190,10 @@ function Tools(){
         }
     ]
 
-    let grouped_tools = groupItems(tools, 4);
-
     return(
         <div className={styles.toolCards}>
-            {grouped_tools.map((group, rowIndex) => (
-                <div key={rowIndex} className={styles.toolRow}>
-                    {group.map((details, index) => (
-                        <Skill key={index} details={details} />
-                    ))}
-                </div>
+            {tools.map((details, index) => (
+                <Skill key={index} details={details} />
             ))}
         </div>
     )
@@ -237,27 +215,11 @@ function Dev(){
         },
     ]
 
-    let grouped_dev = groupItems(dev, 4);
-
     return(
         <div className={styles.devCards}>
-            {grouped_dev.map((group, rowIndex) => (
-                <div key={rowIndex} className={styles.devRow}>
-                    {group.map((details, index) => (
-                        <Skill key={index} details={details} />
-                    ))}
-                </div>
+            {dev.map((details, index) => (
+                <Skill key={index} details={details} />
             ))}
         </div>
     )
-}
-
-// Build rows by slicing the data into smaller rows
-function groupItems(data, itemsPerRow){
-    let items = [];
-    for(let i = 0; i < data.length; i += itemsPerRow){
-        items.push(data.slice(i, i + itemsPerRow));
-    }
-
-    return items;
 }
