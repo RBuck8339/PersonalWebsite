@@ -60,7 +60,7 @@ export function Skills(){
                     <Libraries />
                 </div>
                 <div className={styles.skillGroup}>
-                    <h1 className={styles.header}>Dev</h1>
+                    <h1 className={styles.header}>Dev Kit</h1>
                     <Dev />
                 </div>
             </div>
