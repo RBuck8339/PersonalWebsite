@@ -1,5 +1,4 @@
 import React from 'react';
-import {useSearchParams} from 'react-router-dom';
 import styles from './Portfolio.module.css';
 import {Experience, Publication} from '../../components/Cards/Cards';
 
@@ -84,16 +83,10 @@ function Experiences(){
         },
     ]
 
-    let grouped_experiences = groupItems(experience, 3);
-
     return (
         <div className={styles.experienceCards}>
-            {grouped_experiences.map((group, rowIndex) => (
-                <div key={rowIndex} className={styles.experienceRow}>
-                    {group.map((details, index) => (
-                        <Experience key={index} id={details.id} details={details} />
-                    ))}
-                </div>
+            {experience.map((details, index) => (
+                <Experience key={index} id={details.id} details={details} />
             ))}
         </div>
     );
@@ -110,24 +103,14 @@ function Publications(){
         }
     ]
 
-    let grouped_publications = groupItems(publications, 1);
-
     return (
         <div className={styles.publicationCards}>
-            {grouped_publications.map((group, rowIndex) => (
-                <div key={rowIndex} className={styles.publicationRow}>
-                    {group.map((details, index) => (
-                        <Publication key={index} id={details.id} details={details} />
-                    ))}
-                </div>
+            {publications.map((details, index) => (
+                <Publication key={index} id={details.id} details={details} />
             ))}
         </div>
+            
     );
-}
-
-
-function SearchBar(){
-
 }
 
 export function Portfolio(){
@@ -147,14 +130,4 @@ export function Portfolio(){
             </div>
         </div>
     );
-}
-
-// Build rows by slicing the data into smaller rows
-function groupItems(data, itemsPerRow){
-    let items = [];
-    for(let i = 0; i < data.length; i += itemsPerRow){
-        items.push(data.slice(i, i + itemsPerRow));
-    }
-
-    return items;
 }
