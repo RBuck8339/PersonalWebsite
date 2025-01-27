@@ -1,10 +1,10 @@
-import React from 'react';
+import React , {useState} from 'react';
 import styles from './Portfolio.module.css';
 import {Experience, Publication} from '../../components/Cards/Cards';
 
 
-function Experiences(){
-    let experience = [
+function getExperiences(){
+    return [
         // ICML 2024
         {
             Name: 'ICML Topological Deep Learning Challenge',
@@ -81,11 +81,46 @@ function Experiences(){
             Tags: ['Robotics', 'Python', 'ROS', 'Machine Learning', 'Computer Vision', 'Student Organization'],
             id: 'F1-Tenth'
         },
-    ]
+    ];
+}
+
+
+function getPublications(){
+    return [
+        {
+            Title: 'Coming Soon',
+            Date: 'Soon',
+            Link: 'Here',
+            Tags: ['Upcoming', 'Research']
+        }
+    ];
+}
+
+
+function searchBar({query, setQuery}){
+    return (
+        <input 
+            type="text"
+            placeholder="Search by project or publication tag..."
+            value={query}
+            onChange={(e) => {
+                    setQuery(e.target.value.toLowerCase())
+                }
+            }
+        />
+    )
+}
+
+function Experiences({query}){
+    let experiences = getExperiences();
+
+    let filtered_experiences = query 
+        ? experiences.filter((details) => details.Tags.some((tag) => tag.toLowerCase().includes(query)))
+        : experiences;
 
     return (
         <div className={styles.experienceCards}>
-            {experience.map((details, index) => (
+            {filtered_experiences.map((details, index) => (
                 <Experience key={index} id={details.id} details={details} />
             ))}
         </div>
@@ -94,18 +129,16 @@ function Experiences(){
 
 
 /*Might make this its own page, as part of a dropdown menu that shows project demos */
-function Publications(){
-    let publications = [
-        {
-            Title: 'Coming Soon',
-            Date: 'Soon',
-            Link: 'Here'
-        }
-    ]
+function Publications({query}){
+    let publications = getPublications();
+
+    let filtered_publications = query 
+        ? publications.filter((details) => details.Tags.some((tag) => tag.toLowerCase().includes(query)))
+        : publications;
 
     return (
         <div className={styles.publicationCards}>
-            {publications.map((details, index) => (
+            {filtered_publications.map((details, index) => (
                 <Publication key={index} id={details.id} details={details} />
             ))}
         </div>
@@ -114,19 +147,24 @@ function Publications(){
 }
 
 export function Portfolio(){
+    const [query, setQuery] = useState(''); // For managing our searches
+
     return (
         <div className={styles.Portfolio}>
             <div className={styles.introText}>
                 <h1>My Portfolio</h1>
                 <p>It is important to me that each project that I take on has something new for me to learn. So I have joined a variety of clubs and challenged myself in personal projects. Below is a list of my projects and publications to date.</p>
             </div>
+            <div className={styles.searchBar}>
+                <searchBar query={query} setQuery={setQuery} />
+            </div>
             <div className={styles.Experiences}>
                 <h1 className={styles.title}><b>Experiences:</b></h1>
-                <Experiences />
+                <Experiences query={query} />
             </div>
             <div className={styles.Publications}>
                 <h1 className={styles.title}><b>Publications:</b></h1>
-                <Publications />
+                <Publications query={query} />
             </div>
         </div>
     );
