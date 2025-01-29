@@ -159,3 +159,11 @@
     line-height: 1;
     text-justify: center;
 }
+
+.Tag:hover {
+    cursor: pointer;
+}
+
+.Tag:active {
+    background-color: rgb(87, 87, 85);
+}

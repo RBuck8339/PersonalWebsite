@@ -1,26 +1,66 @@
 .Portfolio {
+    margin: 0px 100px;
     display: flex;
     flex-direction: column;
-    margin: 0px 50px;
+}
+
+.searchBarBox {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    background: white;
+}
+
+.searchBar {
+    width: 70%;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+.searchBar:focus {}
+
+.tags {
+    /*Style this with slightly darker background for distinction */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 0.8%;
+    width: calc(100% - 1.5%);
+    margin: 0.75%;
+    margin-top: 0.5%;
+}
+
+.hidden {
+    display: none !important;
 }
 
 .experienceCards,
 .publicationCards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.experienceRow,
-.publicationRow {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 .Experiences,
 .Publications {
     display: flex;
     flex-direction: column;
+    margin-bottom: 8%;
+}
+
+.Experiences {
+    margin-bottom: 3%;
 }
 
 .title {

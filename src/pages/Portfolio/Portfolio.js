@@ -1,6 +1,6 @@
-import React , {useState} from 'react';
+import React , {useState, useRef, useEffect} from 'react';
 import styles from './Portfolio.module.css';
-import {Experience, Publication} from '../../components/Cards/Cards';
+import {Experience, Publication, Tag} from '../../components/Cards/Cards';
 
 
 function getExperiences(){
@@ -97,23 +97,119 @@ function getPublications(){
 }
 
 
-function searchBar({query, setQuery}){
-    return (
-        <input 
-            type="text"
-            placeholder="Search by project or publication tag..."
-            value={query}
-            onChange={(e) => {
-                    setQuery(e.target.value.toLowerCase())
-                }
+function SearchBar({query, setQuery}){
+    const [showTags, setShowTags] = useState(false);
+    const wrapper = useRef(null);
+
+    const tags = [
+        // Languages
+        'Python',
+        'C',
+        'C++',
+        'JavaScript',
+        'Java', 
+
+        // Frameworks and Libraries
+        'React',
+        'Flask',
+        'TensorFlow',
+        'PyTorch',
+        'Pandas',
+        'Scikit-learn',
+        'Flutter',
+
+        //Tools
+        'Git',
+        'Docker',
+        'GarphQL',
+        'SQLite',
+        'MySQL',
+        'Jupyter',
+        'VS Code',
+        'Linux',
+
+        // Front End Dev
+        'HTML',
+        'CSS',
+
+        // Back End Dev
+
+
+        // Databases
+        'SQL',
+        'NoSQL',
+        'MySQL',
+        'SQLite',
+        
+        // ML and AI
+        'Machine Learning',
+        'Neural Networks',
+        'Reinforcement Learning',
+        'Computer Vision',
+        'Data Science',
+        'Time Series',
+        
+        // Embedded and Hardward
+        'Embedded',
+        'Hardware',
+
+        // APIs
+        'REST APIs',
+        'OpenAI API',
+
+        // Where it was
+        'Research',
+        'Student Organization',
+        'Personal Project',
+        'Hackathon',
+    ];
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if(wrapper.current && !wrapper.current.contains(e.target)){
+                setShowTags(false);
             }
-        />
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+
+    return (
+        <div className={styles.searchBarBox} ref={wrapper}>
+            <input 
+                className={styles.searchBar}
+                id="searchBar"
+                type="text"
+                placeholder="Search by project or publication tag..."
+                value={query}
+                onChange={(e) => {
+                        setQuery(e.target.value)
+                    }
+                }
+                onFocus={() => setShowTags(true)}
+            />
+            {showTags && (
+                <div className={styles.tags}>
+                    {tags.map((tag) => (
+                        <Tag key={tag} name={tag} id="Tag" onClick={() => setQuery(tag)}/>
+                    ))}
+                </div>
+            )}
+            
+        </div>
     )
 }
 
-function Experiences({query}){
-    let experiences = getExperiences();
 
+function Experiences({query}){
+    query = query.toLowerCase().trim();
+
+    let experiences = getExperiences();
+    
     let filtered_experiences = query 
         ? experiences.filter((details) => details.Tags.some((tag) => tag.toLowerCase().includes(query)))
         : experiences;
@@ -130,6 +226,8 @@ function Experiences({query}){
 
 /*Might make this its own page, as part of a dropdown menu that shows project demos */
 function Publications({query}){
+    query = query.toLowerCase().trim();
+
     let publications = getPublications();
 
     let filtered_publications = query 
@@ -146,6 +244,7 @@ function Publications({query}){
     );
 }
 
+
 export function Portfolio(){
     const [query, setQuery] = useState(''); // For managing our searches
 
@@ -155,9 +254,7 @@ export function Portfolio(){
                 <h1>My Portfolio</h1>
                 <p>It is important to me that each project that I take on has something new for me to learn. So I have joined a variety of clubs and challenged myself in personal projects. Below is a list of my projects and publications to date.</p>
             </div>
-            <div className={styles.searchBar}>
-                <searchBar query={query} setQuery={setQuery} />
-            </div>
+            <SearchBar query={query} setQuery={setQuery} />
             <div className={styles.Experiences}>
                 <h1 className={styles.title}><b>Experiences:</b></h1>
                 <Experiences query={query} />
@@ -166,6 +263,6 @@ export function Portfolio(){
                 <h1 className={styles.title}><b>Publications:</b></h1>
                 <Publications query={query} />
             </div>
-        </div>
+        </div>                          
     );
 }
