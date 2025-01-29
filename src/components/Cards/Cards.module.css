@@ -29,7 +29,8 @@
     border-color: var(--border-color);
     background-color: var(--box-color);
     box-shadow: rgba(255, 255, 255, 0.5);
-    width: 1100px;
+    width: 100%;
+    max-width: 450px;
     height: 350px;
     position: relative;
 }
@@ -142,4 +143,19 @@
 .Coursework {
     margin: 5px;
     margin-left: 0px;
+}
+
+.Tag {
+    display: inline-flex;
+    border: 1px solid black;
+    border-radius: 24px;
+    background-color: var(--box-color);
+    align-items: center;
+    font-size: 12pt;
+    min-width: 5%;
+    padding: 0 12px;
+    padding-left: 6px;
+    height: 36px;
+    line-height: 1;
+    text-justify: center;
 }

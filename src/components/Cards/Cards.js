@@ -112,3 +112,12 @@ export function Publication({details}){
         </div>
     )
 }
+
+export function Tag({name, onClick}){
+    return(
+        <div id="Tag" className={styles.Tag} onClick={onClick}>
+            {/*Tag logo?*/}
+            <p>{name}</p>
+        </div>
+    )
+}
