@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react';
 import styles from './Navigation.module.css';
 import emailLogo from '../../assets/images/socials/email.png';
 import githubLogo from '../../assets/images/socials/github.png';
@@ -9,7 +8,6 @@ import resumeLogo from '../../assets/images/socials/resume.png';
 
 // Navigation Bar seen at all times in the program
 export function Navbar() {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
     // Define parameters for each button to display
     const buttons = [
         // Home button
@@ -37,29 +35,14 @@ export function Navbar() {
             href: '/Skills',
             display: <h1 className={styles.buttonText}>Skills</h1>
         },
-        // Pages dropdown button
-        // { // Tmp unused
-        //     id: 'pages_button',
-        //     style: styles.button,
-        //     onclick: () => setDropdownOpen(!dropdownOpen),
-        //     display: 'pages'
-        // },
+        // Can add more pages here
     ]
 
     return ( 
         <div className={styles.Navbar}>
             {buttons.map((info) => 
                 <Button key={info.id} details={info} />
-            )}
-            {/*Make the dropdown div with its button*/}
-            {/*dropdownOpen && (
-                <DropDown 
-                    options={{
-                        Portfolio: "/Portfolio",
-                        Skills: "/Skills",
-                    }}
-                />
-            )*/}
+            )}            
         </div>
     );
 }
@@ -128,18 +111,5 @@ export function Button({ details }) {
         > 
             {details.display} 
         </button>
-    );
-}
-
-// Dropdown component
-export function DropDown({ options }) {
-    return (
-        <div className={styles.dropdown}>
-            {Object.entries(options).map(([key, value]) => (
-                <Link key={key} to={value} className={styles.dropdownItem}>
-                    {key}
-                </Link>
-                ))}
-        </div>
     );
 }

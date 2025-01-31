@@ -1,25 +1,33 @@
 .Experiences {
     display: flex;
     flex-direction: column;
-    margin: 0px 50px;
+    margin: 0px 100px;
 }
 
 .Timeline {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin: 20px;
     padding: 0;
     align-items: center;
+    margin: 20px 10%;
     /* Center-align the timeline */
 }
 
 .TimelineItem {
+    flex: 1;
     display: flex;
     align-items: center;
     position: relative;
-    width: 80%;
+    width: 100%;
     /* Ensure items span the full width */
+}
+
+.TimelineContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.3s ease;
 }
 
 .TimelineDot {
@@ -30,20 +38,18 @@
     border-radius: 50%;
     position: relative;
     z-index: 2;
+    flex-shrink: 0;
 }
 
 .TimelineLine {
     position: absolute;
     top: 50%;
-    /* Start from the middle of the dot */
     left: 10px;
     width: 2px;
     height: calc(100%);
-    /* Extend beyond the dot size to connect */
     background-color: var(--border-color);
     z-index: 1;
     transform: translateX(-50%);
-    /* Horizontal centering */
 }
 
 
