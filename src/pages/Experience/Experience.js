@@ -89,16 +89,16 @@ function MappedExperiences(){
     return (
         <div className={styles.Timeline}>
             {experiences.map((details, idx) => (
-                <div key={details.id} className={styles.TimelineItem}>
+                <div key={idx} className={styles.TimelineItem}>
                     <div className={styles.TimelineDot}></div>
                     {idx !== experiences.length - 1 && (
                         <div className={styles.TimelineLine}></div>
                     )}
                     <div className={styles.TimelineContent}>
                         {details.Type === 'Position' ? (
-                            <Position id={details.id} details={details} />
+                            <Position details={details} />
                         ) : details.Type === 'Education' ? (
-                            <Education id={details.id} details={details} />
+                            <Education details={details} />
                         ) : null}
                     </div>
                 </div>

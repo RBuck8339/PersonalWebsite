@@ -10,6 +10,7 @@ body {
 
 :root {
     --background-color: #2B2B2B;
+    --darker-background-color: #151515;
     --box-color: #2B2B2B;
     --primary-color: #3498DB;
     --secondary-color: #2ECC71;

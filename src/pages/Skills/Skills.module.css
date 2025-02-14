@@ -18,6 +18,7 @@
     grid-template-columns: repeat(2, minmax(300px, 1fr));
     gap: 4%;
     margin-top: 20px;
+    margin-bottom: 15%;
     width: 100%;
 }
 
