@@ -34,30 +34,6 @@
     position: relative;
 }
 
-@media (max-width: 1200px) {
-    .Eduction,
-    .Position {
-        width: 800px;
-        /* Make each item take up more space on medium screens */
-    }
-}
-
-@media (max-width: 800px) {
-    .Eduction,
-    .Position {
-        width: 600px;
-        /* More space on smaller screens */
-    }
-}
-
-@media (max-width: 500px) {
-    .Eduction,
-    .Position {
-        width: 350px;
-        /* Full width for mobile screens */
-    }
-}
-
 
 /*To make it actually feel like elements of a timeline*/
 

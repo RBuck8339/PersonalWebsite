@@ -1,22 +1,36 @@
+import { motion } from "framer-motion";
 import styles from './Cards.module.css';
 
 export function Project(details){
     return (
-        <div id={details.id}>
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.20, duration: 0.6 }}
+            viewport={{ once: true }}
+            id = {details.id}
+        >
+
             <h2>{details.name}</h2>
             <img src={details.img} alt={details.name}/>
             {details.location && <i>{details.location}</i>}
             {details.duration && <i>{details.duration}</i>}
             <p>{details.description}</p>
             <p><b>Skills: </b>{Array.isArray(details.skills) ? details.skills.join(', ') : details.skills}</p>
-        </div>
+        </motion.div>
     );
 }
 
 
 export function Experience({details}){
     return (
-        <div className={styles.Experience}>
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.20, duration: 0.8 }}
+            viewport={{ once: true }}  
+            className={styles.Experience}
+        >
             <div className={styles.ExperienceBody}>
                 <h2 className={styles.title}>{details.Name}</h2>
                 <i className={styles.info}>{details.Location} {details.Date && <i className={styles.info}>: {details.Date}</i>}</i>
@@ -25,14 +39,21 @@ export function Experience({details}){
                 {details.Img && <img href={details.Img} alt='imgtext'></img>}
                 <p><b>Skills: </b>{Array.isArray(details.Tags) ? details.Tags.join(', ') : details.Tags}</p>
             </div>
-        </div>
+            
+        </motion.div>
     );
 }
 
 
 export function Position({details}){
     return (
-        <div className={styles.Position}>
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.30, duration: 0.8 }}
+            viewport={{ once: true }}
+            className={styles.Position}
+        >
             <div className={styles.Info}>
                 <div className={styles.Header}>
                     <div className={styles.headerText}>
@@ -53,18 +74,22 @@ export function Position({details}){
                     </div>
                     
                     <p className={styles.Skills}><strong>Skills: </strong>{Array.isArray(details.Skills) ? details.Skills.join(', ') : details.Skills}</p>
-                </div>
-                
+                </div>            
             </div>
-            
-        </div>
+        </motion.div>
     );
 }
 
 
 export function Education({details}){
     return (
-        <div className={styles.Education}>
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.30, duration: 0.8 }}
+            viewport={{ once: true }}
+            className={styles.Education}
+        >
             <div className={styles.Info}>
                 <div className={styles.Header}>
                     <div className={styles.headerText}>
@@ -84,36 +109,51 @@ export function Education({details}){
                     <p className={styles.Coursework}><strong>Relevant Coursework: </strong>{Array.isArray(details.Coursework) ? details.Coursework.join(', '): details.Coursework}</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
 
 export function Skill({details}){
     return (
-        <div id="Skill" className={styles.skill}>
+        <motion.div
+            initial={{ y: 80, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.30, duration: 0.6 }}
+            viewport={{ once: true }}
+            className={styles.skill}
+            id="Skill" 
+        >
             <div className={styles.skillContainer}>
                 {details.Display}
                 <div className={styles.overlay}>
                     <p className={styles.skillText}>{details.Name}</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
 
 export function Publication({details}){
     return (
-        <div id="Publication" className={styles.Publication}>
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.30, duration: 0.8 }}
+            viewport={{ once: true }}
+            className={styles.Publication}
+            id="Publication" 
+        >
             <h2 className={styles.title}>Title: {details.Title}</h2>
             <i>Published: {details.Date}</i>
             <p>Link: {details.Link}</p>
-        </div>
+        </motion.div>
     )
 }
 
 export function Tag({name, onClick}){
+    // Do I want to animate here?
     return(
         <div id="Tag" className={styles.Tag} onClick={onClick}>
             {/*Tag logo?*/}
